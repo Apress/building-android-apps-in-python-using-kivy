@@ -1,0 +1,55 @@
+ScreenManager:
+    Configure:
+    Capture:
+
+<Capture>:
+    name: "capture"
+    BoxLayout:
+        orientation: "vertical"
+        Camera:
+            id: camera
+            size_hint_y: 18
+            resolution: (1024, 1024)
+            allow_stretch: True
+            play: True
+            canvas.before:
+                PushMatrix:
+                Rotate:
+                    angle: -90
+                    origin: root.width/2, root.height/2
+            canvas.after:
+                PopMatrix:
+        Button:
+            id: capture
+            font_size: 30
+            text: "Capture"
+            size_hint_y: 1
+            on_press: app.capture()
+
+<Configure>:
+    name: "configure"
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: "1) Enter the IPv4 address of the server.\n2) Enter the port number. \n3) Press the Configure Server button. \nMake sure that the server is active."
+            font_size: 20
+            text_size: self.width, None
+            size_hint_y: 1
+        TextInput:
+            text: "192.168.43.231"
+            font_size: 30
+            id: ip_address
+            size_hint_y: 1
+        TextInput:
+            text: "6666"
+            font_size: 30
+            id: port_number
+            size_hint_y: 1
+        Button:
+            id: cam_size
+            font_size: 30
+            text_size: self.width, None
+            text: "Configure Server"
+            size_hint_y: 1
+            on_press: app.cam_size()
+

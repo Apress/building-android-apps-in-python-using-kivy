@@ -1,0 +1,25 @@
+BoxLayout:
+    orientation: "vertical"
+    Label:
+        id: audio_pos
+        size_hint_x: 0.0
+        size: (0.0, 0.0)
+        canvas.before:
+            Color:
+                rgb: (1, 0, 0)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    Label:
+        font_size: 20
+        id: audio_pos_info
+        text: "Audio Position Info"
+    Button:
+        text: "Play"
+        on_release: app.start_audio()
+    Button:
+        text: "Pause"
+        on_release: app.pause_audio()
+    Button:
+        text: "Stop"
+        on_release: app.stop_audio()

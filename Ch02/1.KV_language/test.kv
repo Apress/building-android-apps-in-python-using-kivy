@@ -1,0 +1,21 @@
+BoxLayout:
+    orientation: "vertical"
+    Label:
+        text: "Waiting for Button Press"
+        id: text_label
+    BoxLayout:
+        orientation: "horizontal"
+        TextInput:
+            text: "TextInput 1"
+            id: text_input1
+        Button:
+            text: "Click me"
+            on_press: app.button1_press()
+    BoxLayout:
+        orientation: "horizontal"
+        TextInput:
+            text: "TextInput 2"
+            id: text_input2
+        Button:
+            text: "Click me"
+            on_press: app.button2_press()

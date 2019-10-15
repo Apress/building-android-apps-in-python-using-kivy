@@ -1,0 +1,32 @@
+BoxLayout:
+    orientation: "vertical"
+    Camera:
+        id: camera
+        size_hint_y: 18
+        resolution: (1280, 720)
+        play: True
+        canvas.before:
+            PushMatrix:
+            Rotate:
+                angle: -90
+                origin: root.width/2, root.height/2
+        canvas.after:
+            PopMatrix:
+    TextInput:
+        text: "192.168.43.231"
+        id: ip_address
+        size_hint_y: 1
+    TextInput:
+        text: "6666"
+        id: port_number
+        size_hint_y: 1
+    Button:
+        id: capture
+        text: "Capture"
+        size_hint_y: 1
+        on_press: app.capture()
+    Button:
+        id: cam_size
+        text: "Configure Server"
+        size_hint_y: 1
+        on_press: app.cam_size()
